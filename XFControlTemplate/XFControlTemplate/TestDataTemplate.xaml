@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:localV="clr-namespace:XFControlTemplate.Views;assembly=XFControlTemplate"        
+             x:Class="XFControlTemplate.TestDataTemplate">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ControlTemplate x:Key="ctl1">
+                <localV:View1 />
+            </ControlTemplate>
+            <ControlTemplate x:Key="ctl2">
+                <localV:View2 />
+            </ControlTemplate>
+            <!--<ControlTemplate x:Key="ctl3">
+                
+                    <Image x:Name="imgCtl" Aspect="AspectFit"/>
+                 
+               
+                
+            </ControlTemplate>-->
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <!--<ListView x:Name="listView" 
+              ItemTemplate="{StaticResource ctl1}" />-->
+    <StackLayout>
+        <!--<Image x:Name="imgCtl" Aspect="AspectFit"/>-->
+        
+        <TableView>
+            <TableSection>
+                <SwitchCell Text="switch" 
+                            OnChanged="SwitchCell_OnOnChanged">
+                </SwitchCell>
+            </TableSection>
+        </TableView>
+        <ContentView 
+            ControlTemplate="{DynamicResource ctl1}">
+        </ContentView>
+
+    </StackLayout>
+
+
+</ContentPage>
